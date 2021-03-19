@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.SignIn">
+
+    <TextView
+        android:id="@+id/passduoView"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="286dp"
+        android:background="@drawable/obvodka"
+        android:text="Повторите пароль"
+        android:textColor="@color/grayHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wordView" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="276dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/group_kek" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="304dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.015"
+        app:srcCompat="@drawable/worldcinema" />
+
+    <TextView
+        android:id="@+id/NameView"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="286dp"
+        android:background="@drawable/obvodka"
+        android:text="Имя"
+        android:textColor="@color/grayHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/SecondnView"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="286dp"
+        android:background="@drawable/obvodka"
+        android:text="Фамилия"
+        android:textColor="@color/grayHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameView" />
+
+    <TextView
+        android:id="@+id/EmailView"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="286dp"
+        android:background="@drawable/obvodka"
+        android:text="E-mail"
+        android:textColor="@color/grayHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SecondnView" />
+
+    <TextView
+        android:id="@+id/wordView"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="286dp"
+        android:background="@drawable/obvodka"
+        android:text="Пароль"
+        android:textColor="@color/grayHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailView" />
+    <Button
+        android:id="@+id/regbutton"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/zalivka"
+        android:text="Зарегистрировать"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/SignUpbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/SignUpbutton"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginEnd="188dp"
+        android:layout_marginBottom="52dp"
+        android:background="@color/blue"
+        android:text="У меня уже есть аккаунт"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
