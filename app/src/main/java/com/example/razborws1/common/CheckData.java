@@ -10,6 +10,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.razborws1.common.entity.User;
+import com.example.razborws1.databinding.ActivitySignUpBinding;
 import com.example.razborws1.screens.LaunchScreen.MainScreen;
 import com.example.razborws1.screens.SignUp;
 
@@ -17,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CheckData {
+
 
     public static boolean checkMail(String mail){
         return mail.matches("[a-z0-9]+@[a-z0-9]+.[a-z]{1,3}");//проверка формата записи
@@ -28,6 +30,7 @@ public class CheckData {
         builder.setTitle("ошибка");
         builder.setMessage(messege);
         builder.show();
+        //сообщение об ошибке
 
     }
     public static void autoConfirmed(final Activity activity,String login,String pass){
@@ -39,6 +42,7 @@ public class CheckData {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        // запрос входа
         final JsonObjectRequest logonRequest=new JsonObjectRequest(Request.Method.POST,
                 URLs.LOGON,user, new Response.Listener<JSONObject>() {
             @Override
@@ -63,6 +67,19 @@ public class CheckData {
         });
 
         AppData.getInstance(activity).queue.add(logonRequest);
+
+       // JsonObjectRequest signUpReqest=new JsonObjectRequest(Request.Method.POST, URLs.REGISTER, user,
+             //   new Response.Listener<JSONObject>() {
+                    //@Override
+                  //  public void onResponse(JSONObject response) {
+
+                    //    CheckData.autoConfirmed(SignUp.this
+                   //     );
+                 //   }
+               // })
+
+
+
     }
 
 }

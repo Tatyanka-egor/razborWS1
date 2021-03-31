@@ -27,14 +27,15 @@ public class SignIn extends AppCompatActivity {
         )//первая проверка на маил и пароль
         {
             if(CheckData.checkMail(binding.emailView.getText().toString())){
-                CheckData.autoConfirmed(SignIn.this, binding.emailView.getText().toString(),
+                CheckData.autoConfirmed(SignIn.this,
+                        binding.emailView.getText().toString(),
                         binding.PassView.getText().toString());
             }//если почта правильная
             else {CheckData.makeMessege("неправильная почта",this);
             }
         }
         else {
-            CheckData.makeMessege("неправильный пароль",this);
+            CheckData.makeMessege("есть пустые поля",this);
         }
     }
 

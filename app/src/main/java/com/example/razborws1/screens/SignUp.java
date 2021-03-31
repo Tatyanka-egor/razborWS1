@@ -70,7 +70,6 @@ public class SignUp extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-
                 }
                 else {
                     CheckData.makeMessege("пароли не совпадают",this);
