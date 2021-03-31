@@ -1,6 +1,13 @@
 package com.example.razborws1.common.entity;
 
 public class User {
+    private static final String email="email";
+
+        //"email": "vasya@mail.com",
+           // "password": "qwerty",
+          //  "firstName": "John",
+           // "lastName": "Johnson"
+
     public static final String EMAIL="email";
     public static final String PASSWORD="password";
     public static final String FIRST_NAME="firstName";

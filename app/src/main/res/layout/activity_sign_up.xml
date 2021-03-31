@@ -11,7 +11,6 @@
         android:layout_width="300dp"
         android:layout_height="41dp"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
@@ -23,7 +22,7 @@
         android:layout_width="300dp"
         android:layout_height="74dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -47,13 +46,12 @@
         app:layout_constraintTop_toBottomOf="@+id/wordView" />
 
 
-
     <EditText
         android:id="@+id/NameView"
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="286dp"
         android:background="@drawable/obvodka"
         android:hint="Имя"
@@ -112,17 +110,20 @@
         android:id="@+id/regbutton"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginStart="149dp"
-        android:layout_marginEnd="174dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/zalivka"
         android:onClick="SignUp"
         android:text="Зарегистрировать"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/SignUpbutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passduoView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/SignUpbutton"

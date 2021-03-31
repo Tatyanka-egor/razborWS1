@@ -26,21 +26,23 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(binding.getRoot());
         binding=ActivitySignUpBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
     }
 
 
 
 
     public void SignUp(View view) {//событие клика на кнопку зарегистрироваться
-        if(!binding.NameView.getText().toString().equals("")&&//проверяем поля на заполненость
+        if(
+                !binding.NameView.getText().toString().equals("")&&//проверяем поля на заполненость
             !binding.SecondnView.getText().toString().equals("")&&
-                        !binding.EmailView.getText().toString().equals("")&&
-                        !binding.wordView.getText().toString().equals("")
+                !binding.EmailView.getText().toString().equals("")&&
+                !binding.wordView.getText().toString().equals("")
         )
         {
-            if(CheckData.checkMail(binding.EmailView.getText().toString())){
+            if(CheckData.checkMail(binding.EmailView.getText().toString()))
+            {
                 if(binding.wordView.getText().toString().equals(binding.passduoView.getText().toString())){
                     JSONObject user =new JSONObject();
                     JsonObjectRequest signUpRequest=new JsonObjectRequest(Request.Method.POST, URLs.REGISTER, user, new Response.Listener<JSONObject>() {

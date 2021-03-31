@@ -17,21 +17,18 @@ public class launch_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_screen);
 
-
-
         new Handler().postAtTime(new Runnable(){
             @Override
-            public void run(){
+            public void run()
+            {
                 Intent intent=new Intent(launch_screen.this, SignIn.class);
                 startActivity(intent);
-                finish();}
+                finish();
+            }
 
 
             }, 2000);
         }
         //переход с задержкой заставка на рабочий экран порядок появления меняем в манифесте
-
-
-
 }
 

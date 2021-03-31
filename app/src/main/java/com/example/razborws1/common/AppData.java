@@ -8,6 +8,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
 public class AppData {
+    //синглтон для данных и очереди запросов
     private static AppData instance;
 
     public static AppData getInstance(Context context) {

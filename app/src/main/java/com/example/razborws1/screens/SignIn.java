@@ -16,6 +16,7 @@ public class SignIn extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding=ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
     }
 
@@ -23,11 +24,12 @@ public class SignIn extends AppCompatActivity {
         if(
                 !binding.emailView.getText().toString().equals("")&&
                         !binding.PassView.getText().toString().equals("")
-        ){
+        )//первая проверка на маил и пароль
+        {
             if(CheckData.checkMail(binding.emailView.getText().toString())){
                 CheckData.autoConfirmed(SignIn.this, binding.emailView.getText().toString(),
                         binding.PassView.getText().toString());
-            }
+            }//если почта правильная
             else {CheckData.makeMessege("неправильная почта",this);
             }
         }
