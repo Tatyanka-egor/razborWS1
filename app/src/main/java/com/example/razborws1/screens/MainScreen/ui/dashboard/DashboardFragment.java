@@ -12,7 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.razborws1.screens.MainScreen.R;
+import com.example.razborws1.R;
+
 
 public class DashboardFragment extends Fragment {
 
