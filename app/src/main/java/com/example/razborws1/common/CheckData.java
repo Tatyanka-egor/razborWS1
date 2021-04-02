@@ -11,7 +11,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.razborws1.common.entity.User;
 import com.example.razborws1.databinding.ActivitySignUpBinding;
-import com.example.razborws1.screens.LaunchScreen.MainScreen;
+
+import com.example.razborws1.screens.MainScreen.MainScreen;
 import com.example.razborws1.screens.SignUp;
 
 import org.json.JSONException;
