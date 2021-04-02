@@ -18,6 +18,8 @@ import com.example.razborws1.databinding.ActivitySignUpBinding;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Objects;
+
 public class SignUp extends AppCompatActivity {
 
     ActivitySignUpBinding binding;//придумывать ничего ненадо подключи библиотеку buildFeatures
@@ -40,6 +42,7 @@ public class SignUp extends AppCompatActivity {
                 !binding.EmailView.getText().toString().equals("")&&
                 !binding.wordView.getText().toString().equals("")
         )
+
         {
             if(CheckData.checkMail(binding.EmailView.getText().toString()))
             {
@@ -87,6 +90,28 @@ public class SignUp extends AppCompatActivity {
 
     }
 
+    final JSONObject user=new JSONObject();
+    JsonObjectRequest signUpReqest=new JsonObjectRequest(Request.Method.POST, URLs.REGISTER,user, new Response.Listener<JSONObject>() {
+        @Override
+        public void onResponse(JSONObject response) {
+
+        }
+    },new Response.ErrorListener(){
+        @Override
+        public void onErrorResponse(VolleyError error){
+            if(Objects.requireNonNull(error.getMessage()).contains("успешная")){
+                CheckData.autoConfirmed(SignUp.this,
+                        binding.EmailView.getText().toString(),
+                        binding.wordView.getText().toString());
+
+            }
+            else
+            CheckData.makeMessege("проблема регистрации",SignUp.this);
+        }
+
+
+    }
+    );
     public void CanSign(View view) {
         Intent Signin=new Intent(SignUp.this,SignIn.class);
         startActivity(Signin);

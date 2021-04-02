@@ -68,15 +68,7 @@ public class CheckData {
 
         AppData.getInstance(activity).queue.add(logonRequest);
 
-       // JsonObjectRequest signUpReqest=new JsonObjectRequest(Request.Method.POST, URLs.REGISTER, user,
-             //   new Response.Listener<JSONObject>() {
-                    //@Override
-                  //  public void onResponse(JSONObject response) {
 
-                    //    CheckData.autoConfirmed(SignUp.this
-                   //     );
-                 //   }
-               // })
 
 
 

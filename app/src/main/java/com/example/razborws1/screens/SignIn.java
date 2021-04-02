@@ -37,6 +37,9 @@ public class SignIn extends AppCompatActivity {
         else {
             CheckData.makeMessege("есть пустые поля",this);
         }
+        //Intent MainGo=new Intent(SignIn.this,MainActivity.class);
+       // startActivity(MainGo);
+        //finish();
     }
 
     public void GoSignUp(View view) {
