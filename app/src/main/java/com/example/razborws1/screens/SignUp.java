@@ -58,7 +58,15 @@ public class SignUp extends AppCompatActivity {
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            CheckData.makeMessege("Проблемы с регистрацией ошибка", SignUp.this);
+
+                            if(Objects.requireNonNull(error.getMessage()).contains("успешная")){
+                                CheckData.autoConfirmed(SignUp.this,
+                                        binding.EmailView.getText().toString(),
+                                        binding.wordView.getText().toString());
+
+                            }
+                            else
+                            CheckData.makeMessege("проблема регистрации",SignUp.this);
                         }
                     }
                     );
@@ -90,28 +98,7 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-    final JSONObject user=new JSONObject();
-    JsonObjectRequest signUpReqest=new JsonObjectRequest(Request.Method.POST, URLs.REGISTER,user, new Response.Listener<JSONObject>() {
-        @Override
-        public void onResponse(JSONObject response) {
-
-        }
-    },new Response.ErrorListener(){
-        @Override
-        public void onErrorResponse(VolleyError error){
-            if(Objects.requireNonNull(error.getMessage()).contains("успешная")){
-                CheckData.autoConfirmed(SignUp.this,
-                        binding.EmailView.getText().toString(),
-                        binding.wordView.getText().toString());
-
-            }
-            else
-            CheckData.makeMessege("проблема регистрации",SignUp.this);
-        }
-
-
-    }
-    );
+    ;
     public void CanSign(View view) {
         Intent Signin=new Intent(SignUp.this,SignIn.class);
         startActivity(Signin);

@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.razborws1.R;
 import com.example.razborws1.common.CheckData;
 import com.example.razborws1.databinding.ActivitySignInBinding;
+import com.example.razborws1.screens.MainScreen.MainScreen;
 
 public class SignIn extends AppCompatActivity {
 
@@ -37,9 +38,10 @@ public class SignIn extends AppCompatActivity {
         else {
             CheckData.makeMessege("есть пустые поля",this);
         }
-        //Intent MainGo=new Intent(SignIn.this,MainActivity.class);
-       // startActivity(MainGo);
-        //finish();
+        Intent signIn=new Intent(SignIn.this, MainScreen.class);
+        startActivity(signIn);
+        finish();
+
     }
 
     public void GoSignUp(View view) {
