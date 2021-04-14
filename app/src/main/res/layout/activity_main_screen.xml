@@ -42,24 +42,28 @@
         app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/coverBackImage"
             android:layout_width="match_parent"
             android:layout_height="257dp"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="292dp"
-            android:layout_height="86dp"
+            android:id="@+id/coverFrontImage"
+            android:layout_width="290dp"
+            android:layout_height="62dp"
             android:layout_gravity="center_horizontal|center_vertical"
             app:srcCompat="@drawable/frame_bkokei" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="205dp"
-            android:layout_height="51dp"
+            android:id="@+id/withCover"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="155dp"
+            android:layout_marginStart="170dp"
             android:background="@drawable/zalivka"
-            android:text="TextView" />
+            android:gravity="center"
+            android:text="Смотреть"
+            android:textColor="@color/white" />
 
     </FrameLayout>
 
@@ -69,13 +73,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:layout_width="407dp"
@@ -90,6 +87,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="331dp" />
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,5 +7,7 @@ public class URLs {
     public final static String REGISTER=BASE+"auth/register";
     public final static String LOGON=BASE+"auth/login";
     public final static String MOVIE_LAST=BASE+"usermovies?filter=lastView";
+    public final static String COVER=BASE+"movies/cover";
+    public final static String IMAGE=BASE+"up/images/";
 
 }

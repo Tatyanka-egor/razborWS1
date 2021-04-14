@@ -20,11 +20,12 @@ Intent intent;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_screen);
 
-        SharedPreferences sharedPreferences=getSharedPreferences("firstLoaded", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences=getSharedPreferences("Loaded", Context.MODE_PRIVATE);
+
         boolean firstLoaded=sharedPreferences.getBoolean("firstLoaded",true);
         if(firstLoaded){
             SharedPreferences.Editor e=sharedPreferences.edit();
-            e.putBoolean("firstLoaded",false);
+            e.putBoolean("Loaded",false);
             e.apply();
             intent=new Intent(launch_screen.this,SignUp.class);
         }
@@ -37,7 +38,7 @@ Intent intent;
             @Override
             public void run()
             {
-                Intent intent=new Intent(launch_screen.this, SignIn.class);
+               // Intent intent=new Intent(launch_screen.this, SignIn.class);
                 startActivity(intent);
                 finish();
             }

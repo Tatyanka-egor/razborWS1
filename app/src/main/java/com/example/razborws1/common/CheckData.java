@@ -70,9 +70,11 @@ public class CheckData {
         AppData.getInstance(activity).queue.add(logonRequest);
 
 
-
-
+    }
+    public static void openMovie(Activity activity,String movieId){
+        //потом возвращаемся для осуществления перехода
 
     }
+
 
 }
