@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.razborws1.R;
 import com.example.razborws1.common.AppData;
+import com.example.razborws1.common.CheckData;
 import com.example.razborws1.common.URLs;
 import com.example.razborws1.databinding.FragmentHomeBinding;
 
@@ -47,6 +48,12 @@ public class HomeFragment extends Fragment {
 
     String coverId=null;
     private void loadCoverInfo() {
+        fragmentHomeBinding.withCover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckData.openMovie(getActivity(),coverId);
+            }
+        });
         JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(URLs.COVER, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -62,7 +69,7 @@ public class HomeFragment extends Fragment {
                 }
                 //подгрузка изображения
 
-                
+
 
             }
 
