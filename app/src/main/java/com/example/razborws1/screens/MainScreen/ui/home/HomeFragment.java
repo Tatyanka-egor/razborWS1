@@ -46,7 +46,34 @@ public class HomeFragment extends Fragment {
 
     }
 
+
+
+    private void initTabsMovie(){
+        //нет прокрутке за юзера
+        fragmentHomeBinding.moviePager.setUserInputEnable(false);
+        //устанавливаем адаптер
+        fragmentHomeBinding.moviePager.setAdapter(new FragmentMovieAdapter());
+        //настраиваем отображения вкладок
+        new TabLayoutMediator(fragmentHomeBinding.movieTabs,fragmentHomeBinding.moviePager,(String position) {
+            String flag;
+            switch(position){
+                case 0;
+                flag="Новое";
+                break;
+                case 1;
+                    flag="В тренде";
+                    break;
+                default 2;
+                    flag="Для вас";
+
+            }
+        })
+    }
+
+
+
     String coverId=null;
+
     private void loadCoverInfo() {
         fragmentHomeBinding.withCover.setOnClickListener(new View.OnClickListener() {
             @Override
