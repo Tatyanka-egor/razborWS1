@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -50,11 +52,11 @@ public class HomeFragment extends Fragment {
 
     private void initTabsMovie(){
         //нет прокрутке за юзера
-        fragmentHomeBinding.moviePager.setUserInputEnable(false);
+        fragmentHomeBinding.moviePager.setUserInputEnable(false);//где чертов метод
         //устанавливаем адаптер
-        fragmentHomeBinding.moviePager.setAdapter(new FragmentMovieAdapter());
+        fragmentHomeBinding.moviePager.setAdapter(new FragmentMovieAdapter(this));
         //настраиваем отображения вкладок
-        new TabLayoutMediator(fragmentHomeBinding.movieTabs,fragmentHomeBinding.moviePager,(String position) {
+        new TabLayoutMediator(fragmentHomeBinding.movieTabs,fragmentHomeBinding.moviePager,(int position) {//что происходит
             String flag;
             switch(position){
                 case 0;
@@ -77,7 +79,7 @@ public class HomeFragment extends Fragment {
     private void loadCoverInfo() {
         fragmentHomeBinding.withCover.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {//можно обьяснение?
                 CheckData.openMovie(getActivity(),coverId);
             }
         });
@@ -111,4 +113,31 @@ public class HomeFragment extends Fragment {
     });
     }
 
+    private class FragmentMovieAdapter extends FragmentStateAdapter {
+        public FragmentMovieAdapter(@NonNull Fragment fragment) {
+            super(fragment);
+        }
+
+        @NonNull
+        @Override
+        public Fragment createFragment(int position) {
+            String filter;
+            switch (position){
+                case 0:
+                    filter="new";
+                    break;
+                case 1:
+                    filter="inTrend";
+                    break;
+                default:
+                    filter="forMe";
+            }
+            return new MovieWithFilterFragment(filter);
+        }
+
+        @Override
+        public int getItemCount() {
+            return 3;
+        }
+    }
 }

@@ -9,5 +9,6 @@ public class URLs {
     public final static String MOVIE_LAST=BASE+"usermovies?filter=lastView";
     public final static String COVER=BASE+"movies/cover";
     public final static String IMAGE=BASE+"up/images/";
+    public final static String MOVIE_WITH_FILTER=BASE+"movie?filter=";
 
 }
