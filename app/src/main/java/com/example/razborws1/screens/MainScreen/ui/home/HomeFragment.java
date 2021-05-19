@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -22,6 +23,7 @@ import com.example.razborws1.common.AppData;
 import com.example.razborws1.common.CheckData;
 import com.example.razborws1.common.URLs;
 import com.example.razborws1.databinding.FragmentHomeBinding;
+import com.google.android.material.tabs.TabLayout;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,11 +54,11 @@ public class HomeFragment extends Fragment {
 
     private void initTabsMovie(){
         //нет прокрутке за юзера
-        fragmentHomeBinding.moviePager.setUserInputEnable(false);//где чертов метод
+        fragmentHomeBinding.moviePager.setUserInputEnabled(false);//где чертов метод
         //устанавливаем адаптер
         fragmentHomeBinding.moviePager.setAdapter(new FragmentMovieAdapter(this));
         //настраиваем отображения вкладок
-        new TabLayoutMediator(fragmentHomeBinding.movieTabs,fragmentHomeBinding.moviePager,(int position) {//что происходит
+        new TabLayoutMediator(fragmentHomeBinding.movieTabs,fragmentHomeBinding.moviePager,(int tab,int position) {//что происходит
             String flag;
             switch(position){
                 case 0;
@@ -69,7 +71,8 @@ public class HomeFragment extends Fragment {
                     flag="Для вас";
 
             }
-        })
+            tab.setText(flag);
+        }).attach().
     }
 
 
@@ -138,6 +141,11 @@ public class HomeFragment extends Fragment {
         @Override
         public int getItemCount() {
             return 3;
+        }
+    }
+
+    private class TabLayoutMediator {
+        public TabLayoutMediator(TabLayout movieTabs, ViewPager2 moviePager, Object p2) {
         }
     }
 }

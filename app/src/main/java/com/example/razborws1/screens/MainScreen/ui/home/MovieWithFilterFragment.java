@@ -28,16 +28,21 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.media.CamcorderProfile.get;
+
 
 public class MovieWithFilterFragment extends Fragment {
 
 
 private String filter;
-public MovieWithFilterFragment(String filter){
+
+
+    public MovieWithFilterFragment(String filter){
     this.filter=filter;
 }
 
 FragmentMovieWithFilterBinding binding;
+
 
 AppData appData;
 
@@ -82,11 +87,19 @@ AppData appData;
         binding.moviesView.setAdapter(new PosterAdapter);
     }
 
-    private class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.ViewHolder> {
+
+
+
+
+    private class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.ViewHolder>{
+
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return null;
+            ItemMoviePosterBinding itemMoviePosterBinding=itemMoviePosterBinding.inflate(getLayoutInflater(),parent,false);
+            return new ViewHolder(binding);
+            ;
+
         }
 
         @Override
@@ -96,17 +109,18 @@ AppData appData;
 
         @Override
         public int getItemCount() {
-            return 0;
+            return movieItems.size();
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             ItemMoviePosterBinding itemMoviePosterBinding;
-            public ViewHolder(@NonNull View itemView) {
-                super(itemMoviePosterBinding.getRoot());
+            public ViewHolder(  ItemMoviePosterBinding itemMoviePosterBinding) {
+                super(itemMoviePosterBinding.getRoot);
                 this.itemMoviePosterBinding=itemMoviePosterBinding;
             }
         }
     }
 }
+
 
 
